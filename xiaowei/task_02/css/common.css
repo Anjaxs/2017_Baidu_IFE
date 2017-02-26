@@ -1,0 +1,176 @@
+/*设置初始样式*/
+body{ margin:0; padding: 0; }
+li {  list-style: none; }
+.clearfix{  clear: both; }
+.help-block {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #737373;
+}
+/* 头部信息 */
+header {
+	background-color: #fff;
+	height: 50px;
+	border-bottom: 1px solid rgba(4,14,24,0.3);
+}
+
+header .header-brand{
+	margin:8px 40px;
+	font-family: "楷体";
+	color: #777;
+	float: left;
+}
+
+header .rhesis{
+	display: none;
+}
+
+header nav ol {
+	margin: 0;
+}
+
+header nav li{
+	margin: 14px; 5px;
+	font-family: "黑体";
+	float: left;
+}
+
+header nav li a{
+	color: #444;
+	text-decoration: none;
+}
+header nav li a:hover{
+	color: #4f1234
+}
+/* 结束头部描述 */
+
+
+/*主体内容*/
+.container {
+	background-color: #efdfdf;
+	padding: 4px;
+}
+
+.panel {
+	background-color: #fff;
+	margin:20px 20px 10px 20px;
+	padding: 10px 10px 10px 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.panel p{
+	text-indent: 2em;
+}
+
+.panel figure{
+	float: left;
+	display: block-inline;
+	padding: 0px;
+	width: 200px;
+	height:250px;
+	border:1px solid #000;	
+}
+.panel figure figcaption {
+	text-align: center;
+}
+.panel figure img{
+	margin-top:10px;
+	margin-left:25px;
+	width: 150px;
+	height:200px;
+}
+.panel ul {
+	margin-left: 10px;
+	letter-spacing: 1.5px;
+	line-height: 2em;
+}
+
+.panel-title{
+	margin: 5px 20px;
+	padding: 10px;
+	border-bottom: 1px solid #000; 
+}
+
+.panel-body{
+	padding: 20px;
+}
+
+.panel-img{
+	transform: scale(0.8);
+}
+
+.panel-table{
+	margin:20px 40px;
+	border-collapse:collapse;
+}
+.panel-table td, th{
+	padding: 7px;
+	border: 1px solid #000;
+}
+.panel-table tr:hover{
+	background-color: #eee;
+}
+
+.panel-dl{
+	float: left;
+	width: 750px;
+	font-size:17px;
+	font-family: "楷体";	
+	line-height: 1.3em;
+	margin-left: 20px;
+}
+
+.right-box{
+	width: 400px;
+	float: left;
+	letter-spacing: 2.5px;
+	line-height: 3.5em;
+	font-family: "楷体";
+	margin-left: 50px;
+}
+
+
+/*侧边栏*/
+aside form{
+	margin:20px;
+}
+aside td:nth-child(1){
+	text-align: right;
+}
+aside td {
+	padding: 5px;
+}
+aside .wrap {
+	margin:0 auto;
+}
+aside form input{
+	border:1px solid #aaa;
+	padding: 3px 6px;
+	font-size: 16px;
+	height: 22px;
+}
+aside form input[type='submit'] {
+	margin-top: 10px;
+	color: #fff;
+	height: 35px;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	background-color: #1234ff
+}
+aside form textarea{
+	border:1px solid #aaa;
+	padding: 10px;
+	width: 400px;
+	height: 100px;
+}
+
+/*底部样式*/
+footer{
+	background-color: grey;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	box-shadow: 3px 0px 3px rgba(0, 0, 0, 0.4);
+}
