@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏布局</title>
+	<style>
+		body{
+			padding: 20px;
+			margin: 0px;
+		}
+		.logo-size{
+			width: 80px;
+			height: 80px;
+			display: block;  /*不设置图片下方会有条缝隙*/
+		}
+		.top-20{
+			margin-top: 20px;
+		}
+		div{
+			padding: 20px;
+			border:1px solid #999;
+			box-sizing: border-box; 
+		}
+		#container{
+			background-color: #eee;
+			overflow: auto;
+		}
+		#left-box{
+			width: 200px;
+			float: left;
+			position: relative;
+		}
+		#left-box p{
+			position: absolute;
+			right:20px;
+			top:0px;
+		}
+		#mid-box{
+			float: left;
+			margin:0 20px;
+		}
+		#right-box{
+			margin-right:0;
+			width: 120px;
+			float: left;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div  id="left-box">
+			<img class="logo-size" src="sheng.png" alt="logo">
+			<p>Anjaxs</p>
+		</div>
+		<div id="mid-box">
+			<dl >
+			   <dt>孙悟空</dt>
+			   <dd>孙悟空是《悟空传》中着墨最多的人物形象，然而他一出场就已经迷失了本性，在他的体内，自我灵魂与另外一颗灵魂相遇、碰撞，是成为别人心中畏惧却被自己遗忘的"齐天大圣"，还是做一个神仙要求的保护唐僧平安西天取经的赎罪者，正如后现代社会下人们怀疑自己和他面对的世界一样，被抽去记忆后的孙悟空也一直怀疑自己所听到的关于自己的一切。《悟空传》将孙悟空分解为两个形象，一个是失忆的、迷茫的、只为加功德分而西游取经的孙悟空，一个是个性张扬、不拘束缚、备受妖界崇拜的齐天大圣。</dd>
+
+			   <dt>唐僧</dt>
+			   <dd>唐僧是一个不烧香却拆庙的信徒，他的心中充满怀疑，人性乃至神性的弱点和黑暗都让他困惑，他对自己的师父法明直言“我要学的你又教不了我”，对人生则发出“何人……何人生我？生我又为何？既带我来，又不指我路……”的疑问。与此同时，他又和矛盾的自我相较量，发出了“我要这天，再遮不住我眼，要这地，再埋不了我心，要这众生，都明白我意，要那诸佛，都烟消云散”的誓愿。借助唐僧的质询，作者表达了对“信仰”的力量的矛盾的心情。他发现“信仰”不足以拯救人，但在信仰之外似乎又没有别的东西可以支撑个人的生存。因此，依赖并怀疑信仰成了两难窘境中超越的企图和尝试。</dd>
+
+			   <dt>如来</dt>
+			   <dd>在《悟空传》中，如来是绝对的反面人物。花果山因为孙悟空与天庭的战斗被毁，这是孙悟空的“原罪”，如来利用他的内疚，趁其放松警惕的时候将之压入五指山下。</dd>
+			</dl>
+		</div>
+		<div id="right-box">
+			<img class="logo-size" src="sheng.png" alt="logo">
+			<img class="logo-size top-20" src="sheng.png" alt="logo">
+			<img class="logo-size top-20" src="sheng.png" alt="logo">
+			<img class="logo-size top-20" src="sheng.png" alt="logo">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var midBox=document.getElementById("mid-box");
+		/*为什么不是 减去440px*/
+		midBox.style.width = window.innerWidth - 455 + 'px';
+		window.onresize = function(){
+			midBox.style.width = window.innerWidth - 455 + 'px';
+		}
+	</script>
+</body>
+</html>
