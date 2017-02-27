@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>定位和居中问题</title>
+</head>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			background-color: #fc0;
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			position: absolute;
+		}
+		#container{
+			width: 400px;
+			height:200px;
+			background-color: #ccc;
+			margin:auto;
+			overflow: hidden;
+			position: relative;
+		}
+		#left-top{
+			left:-50px;
+			top:-50px;
+		}
+		#right-bot{
+			right: -50px;
+			bottom: -50px;
+		}
+	</style>
+<body>
+	<div id="container">
+		<div class="box" id="left-top"></div>
+		<div class="box" id="right-bot"></div>
+	</div>
+
+	<script>
+		var container=document.getElementById("container");
+		container.style.marginTop = window.innerHeight/2 - 100 + 'px';
+		window.onresize = function(){
+			container.style.marginTop = window.innerHeight/2 - 100 + 'px';
+		}
+	</script>
+</body>
+</html>
