@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务五：基础JavaScript练习（二）</title>
+	<style>
+		#queue{
+			height: 150px;
+			margin: 10px 0;
+			padding: 10px;
+			border: 1px solid #eee;
+		}
+		#queue div{
+			width: 20px;
+			background-color: red;
+			display: inline-block;
+			margin:0px 10px 0px 0px;
+		}
+		#alert{
+			display: none;
+			padding-left:10px;
+			color: #f33;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="submit" value="左侧入" onclick="In('left')">
+	<input type="submit" value="右侧入" onclick="In('right')">
+	<input type="submit" value="左侧出" onclick="Out('left')">
+	<input type="submit" value="右侧出" onclick="Out('right')">
+	<input type="submit" value="排序" onclick="Sort()">
+	<label style="margin-left: 20px">数量不能超过60 当前数量为：<span id="count"></span></label>
+	<p id="alert"></p>
+	<div id="queue"></div>
+
+	<script type="text/javascript">
+		
+		function ShowMsg(msg) {
+			var alert = document.getElementById('alert');
+			alert.innerHTML = msg;
+			alert.style.display = 'block';
+		}
+
+		function HiddenMsg() {
+			document.getElementById('alert').style.display = 'none';
+		}
+
+		/*检查数字合法性*/
+		function CheckNum(num) {
+			var isValid = !(isNaN(num) || num == "" || num < 10 || num > 100);
+			//如果不合法，则显示错误信息
+			if (!isValid) {
+				ShowMsg("非法数字：请您输入正确的数字(10~100)")
+			} else {
+				HiddenMsg();
+			}
+			return isValid;
+		}
+
+		/*不能超过60个*/
+		function CheckMax(num) {
+			if (num >= 60) {
+				alert("队列元素不能超过60")
+				return false;
+			}
+			return true;
+		}
+
+		function In(opt) {
+			var num = document.getElementById('num').value;
+			var queue = document.getElementById('queue');
+			var isValid = CheckNum(num) && CheckMax(queue.children.length);
+			if (isValid) {	
+				switch (opt) {
+					case 'left' :
+						queue.innerHTML = "<div style='height:"+num+"px'></div>" + queue.innerHTML;
+						break;
+					case 'right' : 
+						queue.innerHTML += "<div style='height:"+num+"px'></div>";
+						break;
+				}
+			}
+			//数量加一
+			document.getElementById('count').innerHTML = queue.children.length;
+		}
+
+		function Out(opt) {
+			var queue = document.getElementById('queue');
+			switch (opt) {
+				case 'left' :
+					var child = queue.children[0];
+					break;
+				case 'right' : 
+					var child = queue.children[queue.children.length-1];
+					break;
+			}
+			if (child) {
+				queue.removeChild(child);
+				//数量减一
+				document.getElementById('count').innerHTML = queue.children.length;
+			} else {
+				ShowMsg("现在队列为空，不能弹出元素");
+			}
+		}
+
+		function Sort() {
+			var queue = document.getElementById('queue').children;
+
+			for (var i = 1; i < queue.length; i++) {
+				for (var j = 0; j < queue.length-i; j++) {
+					if (parseInt(queue[j].style.height) > parseInt(queue[j+1].style.height)) {
+						var tmp = queue[j+1].style.height;
+						queue[j+1].style.height = queue[j].style.height;
+						queue[j].style.height = tmp;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
