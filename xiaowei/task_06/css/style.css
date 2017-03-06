@@ -1,0 +1,355 @@
+/*reset*/
+body{ margin: 0; padding: 0; background-color: #222222; }
+ul{ list-style: none }
+
+/*头部样式*/
+#container{
+	width: 980px;
+	height: 1430px;
+	background-color: #fff;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 0 45px;
+}
+
+#container header{
+	border-bottom: 2px solid #938e8c;
+	font-size: 12px;
+	font-family:"SimHei";
+}
+
+#container header time{
+	float: right;
+	margin-top:-20px;
+	color: #d45d5c;
+}
+
+#brand{
+	width: 110px;
+	height: 61px;
+	background-color: #e14953;
+	color: #fff;
+	box-sizing: border-box;
+	padding-left: 5px; 
+	line-height: 100px;
+}
+
+
+/*第一部分的左边内容*/
+#top .left-box{
+	float: left;
+	width: 641px;
+}
+
+#top .img{
+	height: 301px;
+	margin-top:35px;
+	background-image: url("../img/pic1.png");
+}
+
+#top .img-left-shadow{
+	float: left;
+	width: 191px;
+	height: 301px;
+	background-color: rgba(0,200,0,0.2);
+}
+#top .img-right-shadow{
+	float: right;
+	width: 191px;
+	height: 301px;
+	background-color: rgba(200,0,0,0.2);
+}
+
+#top article {
+	float: left;
+	width: 30%;
+	margin-right:20px;
+}
+#top article .title{
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: underline;
+	margin:35px 0 -5px 0;
+}
+#top article .content{
+	font-size: 12px;
+	line-height: 16px;
+}
+
+/*what article*/
+#top .what .title{
+	color: #418c59;
+	font-family: "Microsoft YaHei";
+}
+#top .what .content{
+	color: #767777;
+	font-family: "SimSun";
+}
+
+/*when article*/
+#top .when .title{
+	color: #d2994f;
+}
+#top .when .content{
+	color: #231815;
+	font-family: "Microsoft YaHei";
+	opacity: 0.7;
+}
+
+/*how article*/
+#top .how .title{
+	color: #cc7680;
+}
+#top .how .content{
+	color: #231815;
+	font-family: "Microsoft YaHei";
+	opacity: 0.7;
+}
+#top .how ul{
+	margin-top: 55px;
+	margin-left: -35px;
+	opacity: 0.7;
+}
+#top .how ul span{
+	font-style: italic;
+	color: #cd4a48;
+}
+
+/*第一部分的右边内容*/
+#top .right-box{
+	float: right;
+	margin-top:35px;
+	width: 203px;
+	height: 301px;
+	border-top: 2px solid #cc8091;
+}
+
+#top .right-box .heading{
+	margin: 0;
+	font-size:24px;
+	color: #000;
+	font-family: "Microsoft YaHei";
+	text-decoration: underline;
+	line-height: 32px;
+}
+
+#top .right-box .sup-heading{
+	margin: 0;
+	font-size:12px;
+	color: #676767;
+	font-family: "KaiTi";
+	line-height: 10px;
+}
+#top .right-box .num700{
+	margin: 0px 0 0 -15px;
+	font-size: 116px;
+	color: #75b86b;
+	font-weight: bold;
+	font-style: italic;
+}
+#top .right-box .num32{
+	float: left;
+	margin:-25px 0 0 0;
+	font-size: 55px;
+	color: #cc8091;
+}
+#top .right-box .title{
+	float: left;
+	margin:0px 0 0 5px;
+	font-size: 21px;
+	color: #cc8091;
+}
+#top .right-box .intro{
+	float: left;
+	margin:25px 0 0 -30px;
+	font-size: 12px;
+	color: #cccccc;
+}
+
+/*第二部分左边内容*/
+#bottom{
+	margin-top: 50px;
+}
+#bottom .left-box{
+	width: 415px;
+	float: left;
+}
+#bottom .left-box .heading{
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	border-bottom: 2px solid #11456b;
+}
+#bottom .left-box .heading p:nth-child(1){
+	margin: -30px 0 0 0;
+}
+#bottom .left-box .heading span:nth-child(1){
+	font-size: 72px;
+	color: #f5e327;
+	font-weight: bold;
+	font-style: italic;
+}
+#bottom .left-box .heading span:nth-child(2){
+	font-size: 36px;
+	color: #11456b;
+	font-weight: bold;
+	line-height: 16px;
+}
+#bottom .left-box .heading p:nth-child(2){
+	font-size: 30px;
+	color: #11456b;
+	font-weight: bold;
+	margin: 0;
+}
+#bottom .left-box .body p{
+	font-size: 12px;
+	color: #767777;
+	line-height: 16px;
+}
+#bottom .left-box .body p span{
+	font-size: 70px;
+	color: #f5e327;
+	float: left;
+	margin: 25px 10px 34px 0;
+}
+#bottom .left-box .body p img{
+	float: right;
+	margin: 15px 0 10px 10px;
+}
+
+/*第二部分右边内容*/
+#bottom .right-box{
+	float: left;
+	margin-left: 15px;
+}
+#bottom .right-box .img{
+	width: 458px;
+	height: 255px;
+	background: url("../img/pic2.png") no-repeat;
+	position: relative;
+}
+#bottom .right-box .img .bottom-intro{
+	width: 458px;
+	height: 61px;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.2);
+}
+#bottom .right-box .img .bottom-intro p{
+	width: 350px;
+	height: 44px;
+	line-height: 44px;
+	padding-left:10px;
+	margin:10px auto;
+	border-left:3px solid #72b16a;
+}
+#bottom .right-box .img .bottom-intro .title{
+	font-size: 26px;
+	color: #fff;
+}
+#bottom .right-box .img .bottom-intro .content{
+	font-size: 14px;
+	color: #72b16a;
+	letter-spacing: 140%;
+	font-style: italic;
+	font-family: "Microsoft YaHei";
+}
+#bottom .right-box .last{
+	width: 459px;
+	height: 310px;
+	background-color: #ecf1d5;
+	margin-top: 30px;
+	padding-top:15px; 
+}
+#bottom .right-box .last ul li{
+	margin:15px 0px;
+}
+#bottom .text-left{
+	font-size: 16px;
+	color: #5a5b5b;
+	line-height: 20px;
+}
+#bottom .text-right{
+	font-size: 12px;
+	color: #5a5b5b;
+	font-style: italic;
+	font-family: "SimSun";
+}
+/*向上三角形*/
+#bottom .dot-top {  
+    font-size: 0;  
+    line-height: 0;  
+    border-width: 7px;  
+    border-color: #02446d;  
+    border-top-width: 0;  
+    border-style: dashed;  
+    border-bottom-style: solid;  
+    border-left-color: transparent;  
+    border-right-color: transparent;  
+    float: left;
+    margin:13px 10px 0 -10px;
+} 
+#bottom .red-box{
+	float: left;
+	width: 260px;
+	height: 160px;
+	margin-top: 12px;
+	background-color: #e14953;
+}
+#bottom .red-box .num0{
+	font-size: 110px;
+	color: #fff;
+	font-family: "Microsoft YaHei";
+	float: left;
+	margin: -10px 0 0 10px;
+}
+#bottom .red-box div{
+	float: left;
+	width: 150px;
+	height: 86px;
+	margin: 35px 0px 0 10px;
+	padding-left:10px;
+	border-left:2px solid #fff;
+}
+#bottom .red-box div p{
+	margin:0;
+}
+#bottom .red-box .title{
+	font-size: 16px;
+	color: #fff;
+	font-family:"SimHei";
+	font-style: italic;
+}
+#bottom .red-box .content{
+	font-size: 12px;
+	color: #fff;
+	font-family:"SimHei";
+}
+#bottom .quote-text{
+	float: left;
+	width: 180px;
+	height: 160px;
+	margin-top: 30px;
+	margin-left: 15px;
+	font-size: 14px;
+	color:#5a5b5b;
+	font-family:"SimHei";
+	font-style: italic;
+	line-height: 20px;
+}
+#bottom .quote-text .quote{
+	margin:0;
+	line-height: 72px;
+	font-size: 72px;
+	color: #d45d5c;
+	font-style: normal;
+}
+
+/*底部信息*/
+footer{
+	border-top: 1px solid #938e8c;
+	font-size: 12px;
+}
+footer span{
+	float: right;
+	color: #d45d5c;
+}
