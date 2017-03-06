@@ -24,10 +24,10 @@
 </head>
 <body>
 	<input type="text" id="num">
-	<input type="submit" value="左侧入" onclick="LeftIn()">
-	<input type="submit" value="右侧入" onclick="RightIn()">
-	<input type="submit" value="左侧出" onclick="LeftOut()">
-	<input type="submit" value="右侧出" onclick="RightOut()">
+	<input type="submit" value="左侧入" onclick="In('left')">
+	<input type="submit" value="右侧入" onclick="In('right')">
+	<input type="submit" value="左侧出" onclick="Out('left')">
+	<input type="submit" value="右侧出" onclick="Out('right')">
 	<p id="alert"></p>
 	<div id="queue"><div>35</div></div>
 
@@ -55,41 +55,37 @@
 			return isValid;
 		}
 
-		function LeftIn() {
+		function In(opt) {
 			var num = document.getElementById('num').value;
-			var isValid = CheckNum(num);
-			//如果合法,进行左侧入操作
-			if (isValid) {
-				var queue = document.getElementById('queue');
-				queue.innerHTML = "<div>"+ num +"</div>" + queue.innerHTML;
-			}
-		}
-
-		function RightIn() {
-			var num = document.getElementById('num').value;
+			var queue = document.getElementById('queue');
 			var isValid = CheckNum(num);
 			//如果合法,进行右侧入操作
 			if (isValid) {
-				var queue = document.getElementById('queue');
-				queue.innerHTML += "<div>"+ num +"</div>";
+				switch (opt) {
+					case 'left' :
+						queue.innerHTML = "<div>"+ num +"</div>" + queue.innerHTML;
+						break;
+					case 'right':
+						queue.innerHTML += "<div>"+ num +"</div>";
+						break;
+				}
+				
 			}
 		}
 
-		function LeftOut() {
+		function Out(opt) {
 			var queue = document.getElementById('queue');
-			var firstChild = queue.children[0];
-			if (firstChild) {
-				queue.removeChild(firstChild);
-			} else {
-				ShowMsg("现在队列为空，不能弹出元素");
+			switch (opt) {
+				case 'left':
+					var chlid = queue.children[0];
+					break;
+				case 'right':
+					var chlid = queue.children[queue.children.length-1];
+					break;
 			}
-		}
-
-		function RightOut() {
-			var queue = document.getElementById('queue');
-			var lastChild = queue.children[queue.children.length-1];
-			if (lastChild) {
-				queue.removeChild(lastChild);
+			if (chlid) {
+				queue.removeChild(chlid);
+				alert(chlid.innerHTML);
 			} else {
 				ShowMsg("现在队列为空，不能弹出元素");
 			}
