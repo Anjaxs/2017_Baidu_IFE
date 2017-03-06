@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务四：基础JavaScript练习（一）</title>
+	<style>
+		#queue div{
+			min-width: 25px;
+			padding: 0 10px;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			color: #fff;
+			background-color: red;
+			display: inline-block;
+			margin:10px 10px 0px 0px;
+		}
+		#alert{
+			display: none;
+			padding-left:10px;
+			color: #f33;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="submit" value="左侧入" onclick="LeftIn()">
+	<input type="submit" value="右侧入" onclick="RightIn()">
+	<input type="submit" value="左侧出" onclick="LeftOut()">
+	<input type="submit" value="右侧出" onclick="RightOut()">
+	<p id="alert"></p>
+	<div id="queue"><div>35</div></div>
+
+	<script type="text/javascript">
+		
+		function ShowMsg(msg) {
+			var alert = document.getElementById('alert');
+			alert.innerHTML = msg;
+			alert.style.display = 'block';
+		}
+
+		function HiddenMsg() {
+			document.getElementById('alert').style.display = 'none';
+		}
+
+		/*检查数字合法性*/
+		function CheckNum(num) {
+			var isValid = !(isNaN(num) || num == "");
+			//如果不合法，则显示错误信息
+			if (!isValid) {
+				ShowMsg("非法数字：请您输入正确的数字")
+			} else {
+				HiddenMsg();
+			}
+			return isValid;
+		}
+
+		function LeftIn() {
+			var num = document.getElementById('num').value;
+			var isValid = CheckNum(num);
+			//如果合法,进行左侧入操作
+			if (isValid) {
+				var queue = document.getElementById('queue');
+				queue.innerHTML = "<div>"+ num +"</div>" + queue.innerHTML;
+			}
+		}
+
+		function RightIn() {
+			var num = document.getElementById('num').value;
+			var isValid = CheckNum(num);
+			//如果合法,进行右侧入操作
+			if (isValid) {
+				var queue = document.getElementById('queue');
+				queue.innerHTML += "<div>"+ num +"</div>";
+			}
+		}
+
+		function LeftOut() {
+			var queue = document.getElementById('queue');
+			var firstChild = queue.children[0];
+			if (firstChild) {
+				queue.removeChild(firstChild);
+			} else {
+				ShowMsg("现在队列为空，不能弹出元素");
+			}
+		}
+
+		function RightOut() {
+			var queue = document.getElementById('queue');
+			var lastChild = queue.children[queue.children.length-1];
+			if (lastChild) {
+				queue.removeChild(lastChild);
+			} else {
+				ShowMsg("现在队列为空，不能弹出元素");
+			}
+		}
+	</script>
+</body>
+</html>
