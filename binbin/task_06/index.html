@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务六：基础JavaScript练习（三）</title>
+	<style>
+	</style>
+</head>
+<body>
+	<textarea name="" id="content" cols="30" rows="10"></textarea>
+	<hr>
+	<input type="text" id="key">
+	<input type="submit" id="search" value="Search" >
+
+	<script type="text/javascript">
+	
+		/*检查数字合法性*/
+		function CheckNum(num) {
+			var isValid = !(isNaN(num) || num == "");
+			//如果不合法，则显示错误信息
+			if (!isValid) {
+				ShowMsg("非法数字：请您输入正确的数字")
+			} else {
+				HiddenMsg();
+			}
+			return isValid;
+		}
+
+		function In(opt) {
+			var num = document.getElementById('num').value;
+			var queue = document.getElementById('queue');
+			var isValid = CheckNum(num);
+			//如果合法,进行右侧入操作
+			if (isValid) {
+				switch (opt) {
+					case 'left' :
+						queue.innerHTML = "<div>"+ num +"</div>" + queue.innerHTML;
+						break;
+					case 'right':
+						queue.innerHTML += "<div>"+ num +"</div>";
+						break;
+				}
+				
+			}
+		}
+
+		function Out(opt) {
+			var queue = document.getElementById('queue');
+			switch (opt) {
+				case 'left':
+					var chlid = queue.children[0];
+					break;
+				case 'right':
+					var chlid = queue.children[queue.children.length-1];
+					break;
+			}
+			if (chlid) {
+				queue.removeChild(chlid);
+				alert(chlid.innerHTML);
+			} else {
+				ShowMsg("现在队列为空，不能弹出元素");
+			}
+		}
+	</script>
+</body>
+</html>
