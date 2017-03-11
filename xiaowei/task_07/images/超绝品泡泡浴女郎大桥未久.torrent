@@ -1,0 +1,1 @@
+<script language='javascript'>alert('没找到文件 ');document.location = 'index.php'</script>
