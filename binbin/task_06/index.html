@@ -4,23 +4,103 @@
 	<meta charset="UTF-8">
 	<title>任务六：基础JavaScript练习（三）</title>
 	<style>
-		#content, #search, #key{
-			border:1px solid #666;
+		#queue div{
+			min-width: 25px;
+			padding: 0 10px;
+			height: 45px;
+			line-height: 45px;
+			text-align: center;
+			color: #fff;
+			background-color: red;
+			display: inline-block;
+			margin:10px 10px 0px 0px;
+		}
+		#alert{
+			display: none;
+			padding-left:10px;
+			color: #f33;
 		}
 	</style>
 </head>
 <body>
-	<textarea name="" id="content" cols="30" rows="10"></textarea>
-
+	<p>允许一次批量输入多个内容,可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔</p>
+	<textarea name="content" id="content" cols="30" rows="10" >
+		hello world, i like program!
+	</textarea>
+	<input type="submit" value="左侧入" onclick="In('left')">
+	<input type="submit" value="右侧入" onclick="In('right')">
+	<input type="submit" value="左侧出" onclick="Out('left')">
+	<input type="submit" value="右侧出" onclick="Out('right')">
 	<input type="text" id="key">
-	<input type="submit" id="search" value="Search" >
+	<input type="submit" onclick="Search()" value="搜索">
+	<p id="alert"></p>
+	<div id="queue"></div>
 
 	<script type="text/javascript">
-		var content = document.getElementById('content').value;
-		var key = document.getElementById('')
 		
+		function ShowMsg(msg) {
+			var alert = document.getElementById('alert');
+			alert.innerHTML = msg;
+			alert.style.display = 'block';
+		}
+
+		function HiddenMsg() {
+			document.getElementById('alert').style.display = 'none';
+		}
 
 		
+		function In(opt) {
+			var array = document.getElementById('content').value.split(/[\s,，、 ]/);
+			var queue = document.getElementById('queue');
+
+			switch (opt) {
+				case 'left' :
+					for (var i = array.length-1; i >= 0; i--) {
+						/*如果内容不为空 例如字符串："abc , abc",则会分割成"abc","","","abc"*/
+						if ( array[i] ) {
+							queue.innerHTML = "<div>"+ array[i] +"</div>" + queue.innerHTML;
+						}
+					}
+					break;
+				case 'right':
+					for (var i = 0; i < array.length; i++) {
+						if (array[i]) {
+							queue.innerHTML += "<div>"+ array[i] +"</div>";
+						}	
+					}					
+					break;
+			}			
+		}
+
+		function Out(opt) {
+			var queue = document.getElementById('queue');
+			switch (opt) {
+				case 'left':
+					var chlid = queue.children[0];
+					break;
+				case 'right':
+					var chlid = queue.children[queue.children.length-1];
+					break;
+			}
+			if (chlid) {
+				queue.removeChild(chlid);
+				alert(chlid.innerHTML);
+			} else {
+				ShowMsg("现在队列为空，不能弹出元素");
+			}
+		}
+
+		function Search() {
+			var queue = document.getElementById('queue').children;
+			var key = document.getElementById('key').value;
+			for (var i = 0; i < queue.length; i++) {
+				if (queue[i].innerHTML.indexOf(key) != -1) {
+					queue[i].style.backgroundColor = "green";
+				} else {
+					queue[i].style.backgroundColor = "red";
+				}
+			}
+		}
 	</script>
 </body>
 </html>
