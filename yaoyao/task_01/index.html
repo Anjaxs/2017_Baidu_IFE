@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务一：表单（一）单个表单项的检验</title>
+	<style>
+		#name{
+			height: 25px;
+			border: 1px solid #aaa;
+			margin:5px 20px;
+			padding-left: 10px;
+		}
+		.alert{
+			font-size: 14px;
+			color: #aaa;
+			margin:0;
+			padding-left: 60px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="form-group">
+		<label for="name">名称</label>
+		<input type="text" name="name" id="name">
+		<button onclick="validate()" >验证</button>
+		<p class="alert" id="alert">必填，长度为4-16个字符</p>
+	</div>
+
+
+	<script type="text/javascript">
+		function validate() {
+			var name = document.getElementById('name');
+			var len = name.value.replace(/[^x00-xff]/g,'aa').length;
+			var alert = document.getElementById('alert');
+			if (len == 0) {
+				name.style.borderColor = "red";
+				alert.style.color = "red";
+				alert.innerHTML = "姓名不能为空";
+			} else if (len < 4 || len > 16) {
+				name.style.borderColor = "red";
+				alert.style.color = "red";
+				alert.innerHTML = "姓名格式不正确";
+			} else {
+				name.style.borderColor = "green";
+				alert.style.color = "green";
+				alert.innerHTML = "姓名格式正确";
+			}
+		}
+	</script>
+</body>
+</html>
