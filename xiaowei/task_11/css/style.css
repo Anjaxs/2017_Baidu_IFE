@@ -1,0 +1,155 @@
+/* reset */
+*{ font-size: 14px; font-weight: normal; }
+body,p,h1,h2{ margin:0; padding:0; }
+a{ text-decoration: none; color: #000 }
+ul{ list-style: none; margin:0; padding:0; }
+
+/*common*/
+.flex{display: flex; justify-content: space-around;}
+.flex-item{flex: 1; text-align: center;}
+.clearfix:before, .clearfix:after { content:""; display: table ; clear:both; }
+
+/* header style*/
+header{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 10px;
+	background-color: #80d6db;
+	position: relative;
+}
+header>a, header>h1{
+	font-family: "黑体";
+	font-weight: bold; 
+	font-size: 18px;
+	color: #fff;
+}
+header>a{
+	font-size: 16px;
+	position: absolute;
+	font-weight: normal; 
+}
+header>h1{text-align: center;}
+
+
+/* nav style */
+.nav{
+	height: 50px;
+	line-height: 50px;
+}
+.nav>li:nth-child(2){
+	border-bottom: 3px solid #80d6db;
+}
+
+
+/*轮播图*/
+.carousel>img{
+	width: 100%;
+}
+
+
+/*书签*/
+.bookmark{
+	margin: 10px 0;
+}
+.bookmark>ul>li>img{
+	width: 80%;
+}
+
+
+/*分栏*/
+.column{
+	margin: 10px;
+	padding-top: 10px;
+	border-top:2px solid #eee;
+}
+.column img{
+	width:80%;
+}
+.column h1{
+	font-weight: bold;
+}
+.column .flex-item:nth-child(2){
+	border-left:2px solid #eee;
+	border-right:2px solid #eee;
+}
+
+
+/*模块*/
+.modular{
+	border-top: 10px solid #eee;
+	padding:2px 10px 10px 10px;
+	color: #656565;
+}
+.modular>h1{
+	font-size: 20px;
+	border-bottom:2px solid #eee;
+	line-height: 40px;
+}
+.modular>div{
+	margin-top: 10px;
+}
+.modular .text{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.modular img{
+	float: left;
+	height: 77px;
+}
+.modular p{
+	height: 30px;
+	line-height: 30px;
+	padding:3px 20px;
+	background-color: #eee;
+	text-align: center;
+}
+.modular .text p:nth-child(1), .modular .text p:nth-child(2){
+	margin-bottom:3px;
+}
+.modular .text p:nth-child(3), .modular .text p:nth-child(4){
+	margin-top:2px;
+}
+
+
+/*文章*/
+article{
+	border-top: 10px solid #eee;
+	padding:10px;
+}
+article .article{
+	margin:5px 0;
+	display: flex;
+}
+article .article:nth-child(1){
+	margin-top: 0;
+}
+article .article:nth-child(2){
+	padding:5px 0;
+	border-top:2px solid #eee;
+	border-bottom:2px solid #eee;
+}
+.article img{
+	flex: 1;
+}
+.article>div{
+	flex:2;
+	padding:0 5px;
+	position: relative;
+}
+.title{
+	font-size: 15px;
+	font-weight: bold;
+	color: #656565;
+}
+.article .bottom-msg{
+	position: absolute;
+	bottom: 0;
+}
+.bottom-msg *{
+	margin-right: 5px;
+	color: #aaa;
+}
+
+
+

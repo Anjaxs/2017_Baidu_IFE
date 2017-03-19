@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+	<title>任务十一：移动Web页面布局实践</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<a href="#">< 返回</a>
+		<h1>这是标题</h1>
+	</header>
+	
+	<!-- 导航 -->
+	<ul class="nav flex">
+		<li class="flex-item">导航</li>
+		<li class="flex-item">导航</li>
+		<li class="flex-item">导航</li>
+		<li class="flex-item">导航</li>
+		<li class="flex-item">导航</li>
+	</ul>
+
+	<!-- 轮播图 -->
+	<div class="carousel"><img src="images/lunbo.png" alt="轮播图"></div>
+	
+	<!-- 标签 -->
+	<div class="bookmark">
+		<ul class="flex">
+			<li class="flex-item"><img src="images/biaoqian.png" alt="标签配图"><p>标签</p></li>
+			<li class="flex-item"><img src="images/biaoqian.png" alt="标签配图"><p>标签</p></li>
+			<li class="flex-item"><img src="images/biaoqian.png" alt="标签配图"><p>标签</p></li>
+			<li class="flex-item"><img src="images/biaoqian.png" alt="标签配图"><p>标签</p></li>
+			<li class="flex-item"><img src="images/biaoqian.png" alt="标签配图"><p>标签</p></li>
+		</ul>
+	</div>
+
+	<!-- 分栏 -->
+	<div class="column flex">
+		<div class="flex-item">
+			<img src="images/fenlan1.png" alt="分栏1配图">
+			<h1>分栏一</h1>
+			<h2>分栏小标题</h2>
+		</div>
+		<div class="flex-item">
+			<img src="images/fenlan2.png" alt="分栏2配图">
+			<h1>分栏二</h1>
+			<h2>分栏小标题</h2>
+		</div>
+		<div class="flex-item">
+			<img src="images/fenlan3.png" alt="分栏3配图">
+			<h1>分栏三</h1>
+			<h2>分栏小标题</h2>
+		</div>
+	</div>
+
+	<!-- 模块一 -->
+	<div class="modular">
+		<h1>模块一</h1>
+		<div>
+			<img class="" src="images/mokuai.png" alt="模块配图">
+			<div class="text"><p>这是文案</p><p>这是文案</p><p>这是文案</p><p>这是文案</p></div>
+		</div>
+		<div class="clearfix">
+			<img src="images/mokuai.png" alt="模块配图">
+			<div class="text"><p>这是文案</p><p>这是文案</p><p>这是文案</p><p>这是文案</p></div>
+		</div>
+	</div>
+
+	<!-- 模块二 -->
+	<div class="modular">
+		<h1>模块二</h1>
+		<div>
+			<img src="images/mokuai.png" alt="模块配图">
+			<div class="text"><p>这是文案</p><p>这是文案</p><p>这是文案</p><p>这是文案</p></div>
+		</div>
+		<div class="clearfix">
+			<img src="images/mokuai.png" alt="模块配图">
+			<div class="text"><p>这是文案</p><p>这是文案</p><p>这是文案</p><p>这是文案</p></div>
+		</div>
+	</div>
+
+	<!-- 文章部分 -->
+	<article>
+		<div class="article">
+			<img src="images/wenzhang.png" alt="文章配图">
+			<div>
+				<h1 class="title">这是文章标题字号是22的文章标题</h1>
+				<div class="bottom-msg"><a href="#">文章来源</a><time>6分钟前</time></div>
+			</div>
+		</div>
+		<div class="article">
+			<img src="images/wenzhang.png" alt="文章配图">
+			<div>
+				<h1 class="title">这是另一个文章标题</h1>
+				<div class="bottom-msg"><a href="#">文章来源</a><time>7分钟前</time></div>
+			</div>
+		</div>
+		<div>
+			<h1 class="title">这个也是文章标题字号是22的文章标题</h1>
+			<div class="pic-3 flex">
+				<img class="flex-item" src="images/wenzhang.png" alt="文章配图">
+				<img class="flex-item" src="images/wenzhang.png" alt="文章配图">
+				<img class="flex-item" src="images/wenzhang.png" alt="文章配图">
+			</div>
+			<div class="bottom-msg"><a href="#">文章来源</a><time>7分钟前</time></div>
+		</div>
+	</article>
+</body>
+</html>
