@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务七：JavaScript和树（一）</title>
+	<style>
+		#demo div{
+			width: 50px;
+			height: 50px;
+			border:2px solid #000;
+			text-align: center;
+			line-height: 50px;
+		}
+		#root{ margin:auto; position: relative;; }
+		#root div{ position: absolute; top:60px;}
+		#btn-group{
+			position: absolute;
+			left:50%;
+			transform: translate(-50%,0);
+			top:300px;
+		}
+		.left{ left:-120px; }
+		.right{ right:-120px; }
+		.left-2{ left:-61px; }
+		.right-2{ right:-61px; }
+		.left-3{ left:-31px; }
+		.right-3{ right:-31px; }
+
+	</style>
+</head>
+<body>
+<div id="demo">
+	<div id="root">
+		<div class="left" id="c2">
+			<div class="left-2" id="c4">
+				<div class="left-3" id="c8">8</span></div>
+				<div class="right-3" id="c9">9</span></div>
+				4</span>
+			</div>
+			<div class="right-2" id="c5">
+				<div class="left-3" id="c10">10</span></div>
+				<div class="right-3" id="c11">11</span></div>
+				5</span>
+			</div>
+			2</span>
+		</div>
+		<div class="right" id="c3">
+			<div class="left-2" id="c6">
+				<div class="left-3" id="c12">12</span></div>
+				<div class="right-3" id="c13">13</span></div>
+				6</span>
+			</div>
+			<div class="right-2" id="c7">
+				<div class="left-3" id="c14">14</span></div>
+				<div class="right-3" id="c15">15</span></div>
+				7</span>
+			</div>
+			3</span>
+		</div>
+		1</span>
+	</div>
+</div>
+<div id="btn-group">
+	<button id="preorder-btn">前序遍历</button>
+	<button id="inorder-btn">中序遍历</button>
+	<button id="postorder-btn">后序遍历</button>
+	<button id="level-traversal-btn"">层序遍历</button>
+</div>
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>
