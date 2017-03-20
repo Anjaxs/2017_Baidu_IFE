@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务八：JavaScript和树（二）</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="demo">
+	<div id="root">
+		<span>supper</span>
+
+		<div  style="right:220px;">
+			<span>assert</span>
+
+			<div style="right:150px;">
+				<span>apple</span>
+
+				<div style="right:120px;">
+					<span>pear</span>
+				</div>
+
+				<div style="right:60px;">
+					<span>pig</span>
+				</div>
+
+				<div >
+					<span>cola</span>
+				</div>
+
+				<div style="left:60px;">
+					<span>soccor</span>
+				</div>	
+			</div>
+
+			<div>
+				<span>phone</span>
+			</div>
+
+			<div style="left:150px;">
+				<div style="right:30px;">
+					<span>book</span>
+				</div>
+
+				<div style="left:30px;">
+					<span>school</span>
+				</div>
+			</div>
+
+			<p class="line left" id="line3"></p>
+			<p class="line right" id="line4"></p>
+		</div>
+
+		<div >
+			<span>fish</span>
+		</div>
+
+		<div style="left:220px;">
+			<span>note</span>
+
+			<div style="right:110px;">
+				<span>human</span>
+				<div style="right:60px;">
+					<span>code</span>
+				</div>
+				<div >
+					<span>operate</span>
+				</div>
+				<div style="left:60px;">
+					<span>man</span>
+				</div>
+			</div>
+
+			<div style="left:110px;">
+				<span>program</span>
+				<div style="right:60px;">
+				<span>between</span>
+					<div>
+						<span>cat</span>
+					</div>
+				</div >
+				<div style="left:60px;">
+					<span>glass</span>
+				</div>
+			</div>
+
+			<p class="line left" id="line5"></p>
+			<p class="line right" id="line6"></p>
+		</div>
+		
+		<p class="line left" id="line1"></p>
+		<p class="line right" id="line2"></p>	
+	</div>
+	
+</div>
+<div id="btn-group">
+	<div>
+		前序<input type="radio" name="traversal" value="preorder">
+		后序<input type="radio" name="traversal" value="postorder">
+		层序<input type="radio" name="traversal" value="level">
+		<button id="traversal-btn">遍历</button>
+	</div>
+	<div>
+		前序<input type="radio" name="search" value="preorder">
+		后序<input type="radio" name="search" value="postorder">
+		层序<input type="radio" name="search" value="level">
+		<input type="text" id="search-text">
+		<button id="search-btn">搜索</button>
+	</div>
+</div>
+	<script type='text/javascript' src='js/tree.js'></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

@@ -20,6 +20,7 @@ document.getElementById('level-traversal-btn').onclick = function () {
 function visit(node) {
 	time += 500;
 /*	console.log(node.id);*/
+	console.log(time);
 	node.style.backgroundColor = "white";
 	setTimeout(function () {
 		node.style.backgroundColor = "blue";
