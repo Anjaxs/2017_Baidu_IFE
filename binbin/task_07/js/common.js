@@ -28,16 +28,16 @@ function visit(node) {
 
 function preorder(root) {
 	if (root) {
-		preorder(root.children[0]);
 		visit(root);
+		preorder(root.children[0]);
 		preorder(root.children[1]);
 	}
 }
 
 function inorder(root) {
 	if (root) {
-		visit(root);
 		inorder(root.children[0]);
+		visit(root);
 		inorder(root.children[1]);
 	}
 }
