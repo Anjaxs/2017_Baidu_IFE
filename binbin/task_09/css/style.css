@@ -1,0 +1,35 @@
+
+#demo div{
+	width: 50px;
+	height: 50px;
+	border:2px solid #000;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 50px;
+}
+#demo div:hover{
+	cursor: pointer;
+}
+#root{ margin:auto; position: relative; top:150px;}
+#root div{ position: absolute; top:60px;}
+#btn-group{
+	position: absolute;
+	left:50%;
+	transform: translate(-50%,0);
+	top:2px;
+}
+
+
+#btn-group div{
+	padding: 10px;
+	border: 1px solid #aaa;
+}
+#btn-group div:nth-child(1){
+	border-bottom: none;
+}
+#btn-group input{
+	margin-right: 20px;
+}
+#btn-group input[type=text]{
+	border:1px solid #aaa;
+}

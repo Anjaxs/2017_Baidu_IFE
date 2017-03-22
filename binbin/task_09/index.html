@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>任务九：JavaScript和树（三）</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="demo">
+	<div id="root">
+		<span>root</span>	
+	</div>
+	
+</div>
+<div id="btn-group">
+	<div>
+		<input type="text" id="new-node-text">
+		<button disabled="disabled" id="create-btn">增加子结点</button>
+		<button disabled="disabled" id="delete-btn">删除结点</button>
+	</div>
+	<div>
+		前序<input type="radio" name="traversal" value="preorder">
+		后序<input type="radio" name="traversal" value="postorder">
+		层序<input type="radio" name="traversal" value="level">
+		<button id="traversal-btn">遍历</button>
+	</div>
+	<div>
+		前序<input type="radio" name="search" value="preorder" >
+		后序<input type="radio" name="search" value="postorder">
+		层序<input type="radio" name="search" value="level">
+		<input type="text" id="search-text">
+		<button id="search-btn" >搜索</button>
+	</div>
+</div>
+	<script type='text/javascript' src='js/tree.js'></script>
+	<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>
