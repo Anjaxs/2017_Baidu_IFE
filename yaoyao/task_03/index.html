@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>任务三：表单（三）联动</title>
+	<meta charset="utf-8">
+	<style>
+		body > div {
+			width: 400px;
+			margin: 10% auto;
+		}
+		input[type="radio"]:nth-of-type(2) {
+			margin-left: 20%;
+		}
+		#area {
+			margin: 20px;
+		}
+		#area, #school {
+			padding: 5px;
+			border-radius: 3px;
+		}
+		input[type="text"] {
+			width: 50%;
+			margin: 20px;
+			border-radius: 5px;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="radio" name="school" value="in-school" checked="checked" />在校生
+		<input type="radio" name="school" value="out-school" />非在校生
+		
+		<div id="in-school">
+			学校
+			<select id="area">
+				<option value="beijing" checked="checked">北京</option>
+				<option value="guangzhou">广州</option>
+			</select>
+		
+			<select id="school">
+				<option value="beida"  checked="checked">北京大学</option>
+				<option value="qinghua">清华大学</option>
+			</select>
+		</div>
+		<div id="out-school">
+			就业单位
+			<input type="text">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function selectClick () {
+		var select1 = document.getElementById("area");
+		var select2 = document.getElementById("school");
+		var value = select1.options[select1.selectedIndex].value;
+		var school = {
+			beijing: [["beida", "北京大学"],["qinghua","清华大学"]],
+			guangzhou: [["sysu", "中山大学"],["huagong","华南理工大学"]]
+		}
+		
+		select2.innerHTML = "";
+		school[value].forEach(function(x) {
+			console.log(x);
+			var option = document.createElement("option");
+			option.value = x[0];
+			option.innerHTML = x[1];
+			select2.appendChild(option);
+		});
+	}
+	function radioClick () {
+		var inSchool = document.getElementById("in-school");
+		var outSchool = document.getElementById("out-school");
+		var radio = document.getElementsByName("school");
+		var checked = "";
+		radio.forEach(function(x) {
+			if(x.checked == true) {
+				checked = x.value;
+			}
+		});
+		if(checked == "in-school") {
+			inSchool.style.display = "block";
+			outSchool.style.display = "none";
+		}
+		else {
+			inSchool.style.display = "none";
+			outSchool.style.display = "block";
+		}
+	}
+	function init () {
+		var radio = document.getElementsByName("school");
+		document.getElementById("out-school").style.display = "none";
+		document.getElementById("area").addEventListener('click', selectClick);
+		radio.forEach(function(x) {
+			x.addEventListener('click', radioClick)
+		});
+	}
+	init();
+</script>
+
+</html>
