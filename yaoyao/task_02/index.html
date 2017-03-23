@@ -5,20 +5,18 @@
 	<title>任务一：表单（一）单个表单项的检验</title>
 	<style>
 		form{
-			width: 460px;
-			margin:0 auto;
+			width: 380px;
+			margin:0 auto;	
 		}
-		#name{
-			height: 25px;
-			border: 1px solid #aaa;
-			margin:5px 20px;
-			padding-left: 10px;
+		input{
+			border:1px solid #aaa;
 		}
 		.alert{
+			visibility:hidden;
 			font-size: 14px;
-			color: #aaa;
+			height: 30px;
 			margin:0;
-			padding-left: 130px;
+			padding-left: 105px;
 		}
 		label{
 			display: inline-block;
@@ -33,63 +31,41 @@
 			line-height: 30px;
 			border: none;
 			border-radius: 5px;
-			margin-left: 310px;
+			margin-left:200px;
 		}
 	</style>
 </head>
 <body>
-	<form action="">
+	<form action="" method="POST">
 		<div class="form-group">
 			<label for="name">名称</label>
 			<input type="text" name="name" id="name">
-			<p class="alert" id="alert">必填，长度为4-16个字符</p>
+			<p class="alert"></p>
 		</div>
 		<div class="form-group">
-			<label for="name">密码</label>
-			<input type="text" name="name" id="name">
-			<p class="alert" id="alert">必填，长度为4-16个字符</p>
+			<label for="pwd">密码</label>
+			<input type="password" name="pwd" id="pwd">
+			<p class="alert"></p>
 		</div>
 		<div class="form-group">
-			<label for="name">确认密码</label>
-			<input type="text" name="name" id="name">
-			<p class="alert" id="alert">必填，长度为4-16个字符</p>
+			<label for="repwd">确认密码</label>
+			<input type="password" name="repwd" id="repwd">
+			<p class="alert"></p>
 		</div>
 		<div class="form-group">
-			<label for="name">邮箱</label>
-			<input type="text" name="name" id="name">
-			<p class="alert" id="alert">必填，长度为4-16个字符</p>
+			<label for="email">邮箱</label>
+			<input type="text" name="email" id="email">
+			<p class="alert"></p>
 		</div>
 		<div class="form-group">
-			<label for="name">手机</label>
-			<input type="text" name="name" id="name">
-			<p class="alert" id="alert">必填，长度为4-16个字符</p>
+			<label for="phone">手机</label>
+			<input type="text" name="phone" id="phone">
+			<p class="alert"></p>
 		</div>
-		<button onclick="validate()" >提交</button>
+		<button id="submit-btn">提交</button>
 	</form>
 
-
-	<script type="text/javascript">
-		var name = document.getElementById('name');
-
-		function validate() {
-			
-			var len = name.value.replace(/[^x00-xff]/g,'aa').length;
-			var alert = document.getElementById('alert');
-			if (len == 0) {
-				name.style.borderColor = "red";
-				alert.style.color = "red";
-				alert.innerHTML = "姓名不能为空";
-			} else if (len < 4 || len > 16) {
-				name.style.borderColor = "red";
-				alert.style.color = "red";
-				alert.innerHTML = "姓名格式不正确";
-			} else {
-				name.style.borderColor = "green";
-				alert.style.color = "green";
-				alert.innerHTML = "姓名格式正确";
-			}
-			return false;
-		}
-	</script>
+	
+	<script src="js/validate.js"></script>
 </body>
 </html>
