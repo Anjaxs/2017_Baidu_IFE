@@ -1,0 +1,56 @@
+table *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+table{
+    border-collapse: collapse;
+}
+td{
+    width: 40px;
+    height: 40px;
+    border:1px solid #999;
+    text-align:center;
+    line-height: 40px;
+}
+tr>td:nth-child(1){
+    border:none;
+}
+tr:nth-child(1)>td{
+    border:none;
+}
+#box{
+    width: 40px;
+    height: 40px;
+    background-color: red; 
+}
+#box div{
+    width: 40px;
+    height: 10px;
+    background-color: blue;
+}
+#console{
+    width: 30%;
+    padding:10px 10px 70px 10px;
+    float: left;
+    border:1px solid #777;
+}
+#console *{
+    margin:5px;
+}
+#tip {
+    margin:10px 10px 10px 0;
+    padding:0;
+    list-style: none;
+    font-size: 14px;
+    color:#aaa;
+}
+.left{
+    transform: rotate(-90deg); 
+}
+.right{
+    transform: rotate(90deg); 
+}
+.bottom{
+    transform: rotate(180deg); 
+}
