@@ -1,49 +1,50 @@
-init();
+/*data*/
+var inSchool = document.getElementById("in-school");
+var outSchool = document.getElementById("out-school");
 
-function selectClick () {
-	var select1 = document.getElementById("area");
-	var select2 = document.getElementById("school");
-	var value = select1.options[select1.selectedIndex].value;
-	var school = {
-		beijing: [["beida", "北京大学"],["qinghua","清华大学"]],
-		guangzhou: [["sysu", "中山大学"],["huagong","华南理工大学"]]
+var radioBox = document.getElementsByName("school");
+var areaSelect = document.getElementById("area");
+var schoolSelect = document.getElementById("school");
+
+/*event*/
+areaSelect.addEventListener('click', selectClick);
+
+radioBox.forEach(function(x) {
+	x.addEventListener('click', radioClick);
+});
+
+/*选择下拉框联动*/
+function selectClick () {	
+	var val = this.options[this.selectedIndex].value;
+	var schoolData = {
+		"beijing": [["beida", "北京大学"],["qinghua","清华大学"]],
+		"guangzhou": [["sysu", "中山大学"],["huagong","华南理工大学"]]
 	}
 	
-	select2.innerHTML = "";
-	school[value].forEach(function(x) {
+	schoolSelect.innerHTML = "";
+	schoolData[val].forEach(function(x) {
 		console.log(x);
-		var option = document.createElement("option");
-		option.value = x[0];
-		option.innerHTML = x[1];
-		select2.appendChild(option);
+		var opt = document.createElement("option");
+		opt.value = x[0];
+		opt.innerHTML = x[1];
+		schoolSelect.appendChild(opt);
 	});
 }
 
 function radioClick () {
-	var inSchool = document.getElementById("in-school");
-	var outSchool = document.getElementById("out-school");
-	var radio = document.getElementsByName("school");
-	var checked = "";
-	radio.forEach(function(x) {
-		if(x.checked == true) {
-			checked = x.value;
-		}
-	});
-	if(checked == "in-school") {
-		inSchool.style.display = "block";
-		outSchool.style.display = "none";
-	}
-	else {
-		inSchool.style.display = "none";
-		outSchool.style.display = "block";
-	}
-}
+	var checkedRadioValue = "";
+	//如果是当前的radio被选择
+	if(this.checked == true) {
+		//记录选择的radio的value
+		checkedRadioValue = this.value;
 
-function init () {
-	var radio = document.getElementsByName("school");
-	document.getElementById("out-school").style.display = "none";
-	document.getElementById("area").addEventListener('click', selectClick);
-	radio.forEach(function(x) {
-		x.addEventListener('click', radioClick)
-	});
+		if(checkedRadioValue == "in-school") {	//隐藏和显示开关
+			inSchool.style.display = "block";
+			outSchool.style.display = "none";
+		}
+		else {
+			inSchool.style.display = "none";
+			outSchool.style.display = "block";
+		}
+	}	
 }
