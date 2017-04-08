@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现树形组件</title>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+	<style>
+		*{ margin:0; padding: 0;}
+		#tree-menu{ margin:10%; display: inline-block;background-color: #eee; padding:20px;}
+		#tree-menu>ul ul{ padding-left:23px; }
+		ul {list-style: none;}
+		ul li{ margin-top: 3px;}
+		i{ margin-right:5px; }
+		.fa-folder-open, .fa-folder{ color: #e4ca1b; }
+		.fa-file{ color: #999; margin-left: 26px;}
+		.fa-minus-square-o, .fa-plus-square-o{ cursor: pointer; }
+	</style>
+</head>
+<body>
+	<div id="tree-menu">
+		<ul>
+			<li>
+				<div class="parent">
+					<i class="fa fa-minus-square-o"></i>
+					<i class="fa fa-folder-open"></i>
+					父节点1 - 展开
+				</div>
+				<ul>
+					<li>
+						<div class="parent">
+							<i class="fa fa-minus-square-o"></i>
+							<i class="fa fa-folder-open"></i>
+							父节点12 - 折叠
+						</div>
+						<ul>
+							<li><i class="fa fa-file"></i>叶子结点111</li>
+							<li><i class="fa fa-file"></i>叶子结点112</li>
+							<li><i class="fa fa-file"></i>叶子结点113</li>
+							<li><i class="fa fa-file"></i>叶子结点114</li>
+						</ul>
+					</li>
+					<li>
+						<div class="parent">
+							<i class="fa fa-minus-square-o"></i>
+							<i class="fa fa-folder-open"></i>
+							父节点12 - 折叠
+						</div>
+						<ul>
+							<li><i class="fa fa-file"></i>叶子结点121</li>
+							<li><i class="fa fa-file"></i>叶子结点122</li>
+							<li><i class="fa fa-file"></i>叶子结点123</li>
+							<li><i class="fa fa-file"></i>叶子结点124</li>
+						</ul>
+					</li>
+					<li>
+						<div class="parent">
+							<i class="fa fa-plus-square-o"></i>
+							<i class="fa fa-folder"></i>
+							父节点13 - 没有子节点
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<div class="parent">
+					<i class="fa fa-plus-square-o"></i>
+					<i class="fa fa-folder"></i>
+					父节点2 - 折叠
+				</div>
+			</li>
+			<li>
+				<div class="parent">
+					<i class="fa fa-plus-square-o"></i>
+					<i class="fa fa-folder"></i>
+					父节点3 - 没有子节点
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+		var treeMenu = document.getElementById('tree-menu');
+		var parents = treeMenu.getElementsByClassName('parent');
+		var squares = [];
+		var len = parents.length;
+		for (var i = 0; i < len; i++) {
+			squares.push(parents[i].children[0]);
+		}
+		for (var i = 0; i < len; i++) {
+
+			squares[i].onclick = function () {
+				var parent = this.parentElement;
+				//如果存在子节点
+				if (parent.nextElementSibling) {
+					//如果是 加号 则显示nextElementSibling 指向的ul
+					if (this.className.indexOf("fa-plus-square-o") != -1) {
+						parent.nextElementSibling.style.display = "block";
+						//把square的加号变成减号
+						this.classList.remove("fa-plus-square-o");
+						this.classList.add("fa-minus-square-o");
+
+						//文件夹样式对应也改变
+						this.nextElementSibling.classList.remove("fa-folder");
+						this.nextElementSibling.classList.add("fa-folder-open");
+
+					//如果则相反
+					} else if (this.className.indexOf("fa-minus-square-o") != -1) {
+						
+						parent.nextElementSibling.style.display = "none";
+						//把square的减号变成加号					
+						this.classList.remove("fa-minus-square-o");
+						this.classList.add("fa-plus-square-o");
+
+						console.log(this.classList[1]);
+						//文件夹样式对应也改变
+						this.nextElementSibling.classList.remove("fa-folder-open");
+						this.nextElementSibling.classList.add("fa-folder");
+					}
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>
